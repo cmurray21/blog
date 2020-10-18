@@ -2,6 +2,8 @@
 
 use Illuminate\Support\Facades\Route;
 
+
+
 /*
 |--------------------------------------------------------------------------
 | Web Routes
@@ -13,6 +15,9 @@ use Illuminate\Support\Facades\Route;
 |
 | ** Best practice: Order from most specific to least specific, because Laravel will stop when there is a match.
 */
+
+
+
 Route::get('/contact', function () {
     return view('contact');
 });
@@ -30,7 +35,7 @@ Route::get('/about', function () {
     // Variables first and last are NOT accessible from view.
     // return view('about')-> withFullname($fullname)->withEmail($email); 
     // We can also pass in an array 
-    return view('about')->withData($data); 
+    return view('about')->with("fullname",$fullname)->withEmail($email); 
 
 });
 
